@@ -1,0 +1,60 @@
+import React, {useState} from 'react';
+import { Button, StyleSheet,View,TextInput, Dimensions} from 'react-native';
+import MapView, {Marker} from 'react-native-maps';
+
+
+
+export default function App() {
+    const [osoite, setOsoite] = useState(''); 
+    const [region, setRegion] = useState({
+        latitude: 60.200692,
+        longitude:24.934302,
+        latitudeDelta: 0.0222,
+        longitudeDelta:0.0121,
+    });
+    
+
+   const suoritaHaku = () => {
+       const url = 'http://www.mapquestapi.com/geocoding/v1/address?key=LthZnktUxfI3rYqfwGyBzhvjkOkXOQKG&location=' + osoite
+        fetch(url)
+        .then(response => response.json())
+        .then(responseJSON => {
+            const lat = responseJSON.results[0].locations[0].latLng.lat;
+            const lng = responseJSON.results[0].locations[0].latLng.lng;
+            setRegion({latitude:lat, longitude:lng, latitudeDelta:0.0222,longitudeDelta:0.0121});
+        
+        });
+    }
+        
+    
+    
+
+    return (
+        <View style={styles.container}>
+            <MapView style={styles.map} region={region}>
+            <Marker coordinate={{latitude: region.latitude, longitude: region.longitude}} title='sijainti'/></MapView>
+            <View>
+            <TextInput placeholder='Osoite' style={{width: 300, fontSize: 18}} onChangeText={osoite => setOsoite(osoite)}/>
+            <Button title='Show' onPress={suoritaHaku} />
+            </View>
+        </View>
+    );
+}
+
+
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 10,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      padding: 20,
+    },
+    map: {  
+        width: Dimensions.get('window').width,
+        height: Dimensions.get('window').height,
+    },
+  });
+
+  

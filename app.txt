@@ -1,0 +1,64 @@
+
+
+import React from 'react';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import { TabBarIOS } from 'react-native';
+import * as firebase from 'firebase';
+import { faHome, faList, faPencilAlt, faStar } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome"
+
+import Etusivu from './Etusivu';
+import Konetallentaja from './Konetallentaja';
+import Listaakone from './Listaakone';
+import Rekisteri from './Rekisteri';
+const image = { uri: "https://c.wallhere.com/photos/8f/28/Nvidia_GPUs_GeForce_computer_cooling_fan_technology_closeup_graphics_card-132561.jpg!d"};
+const Tab = createBottomTabNavigator();
+
+function App() {
+    return (
+        <NavigationContainer>
+            <Tab.Navigator
+            screenOptions={({route}) => ({
+                tabBarIcon:({ focused}) => {
+                    if (route.name === 'Etusivu') {
+                        return (
+                            <FontAwesomeIcon size={18}
+                            icon={faHome}
+                            color={focused ? "#dea411" : "#ffffff"}/>
+                        )
+                    } else if (route.name === 'Uusi') {
+                    return (
+                        <FontAwesomeIcon size={18}
+                        icon={faPencilAlt}
+                        color={focused ? "#dea411" : "#ffffff"}/>
+                    )
+                } else if (route.name === 'Lista') {
+                return (
+                    <FontAwesomeIcon size={18}
+                    icon={faList}
+                    color={focused ? "#dea411" : "#ffffff"}/>
+                )
+            };
+        } 
+            })}
+            tabBarOptions={{
+                activeTintColor: "#dea411",
+                inactiveTintColor: "#ffffff",
+                activeBackgroundColor: "#000000",
+                inactiveBackgroundColor: "#000000",
+                labelStyle: { fontSize: 14 },
+                keyboardHidesTabBar: true,
+              }}
+            >
+                <Tab.Screen name="Etusivu" component={Etusivu} />
+                <Tab.Screen name="Rekisteri" component={Rekisteri} />
+                <Tab.Screen name="Uusi" component={Konetallentaja} />
+                <Tab.Screen name="Lista" component={Listaakone} />
+            </Tab.Navigator>
+
+        </NavigationContainer>
+    );
+}
+
+export default App;

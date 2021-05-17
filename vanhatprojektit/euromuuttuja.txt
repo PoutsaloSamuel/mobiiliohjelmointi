@@ -1,0 +1,57 @@
+import React, {useEffect, useState} from 'react';
+import { Button, StyleSheet, Text, View, Alert, TextInput} from 'react-native';
+import {Picker} from '@react-native-picker/picker';
+
+
+
+export default function App() {
+    const [rates, setRates] = useState([]);
+    const [amount, setAmount] = useState(0);
+    const [selectedCurrency, setSelectedCurrency] = useState('');
+    const [result, setResult] = useState(0);
+
+    useEffect(() => {
+        fetch('https://api.exchangeratesapi.io/latest')
+        .then(response => response.json())
+        .then(responseJSON => setRates(responseJSON.rates))
+        .catch(error => {
+            Alert.alert(error);
+        });
+    }, []);
+        
+    const suoritaLasku = () => {
+        const rate = rates[selectedCurrency];
+        setResult((amount / rate).toFixed(5))
+    }
+    
+
+    return (
+        <View style={styles.container}>
+            <Text>{result} €</Text>
+            <TextInput placeholder='Määrä' value={amount} type='numeric' onChangeText={amount => setAmount(amount)}/>
+            <Picker style={{height:30, width: 100, marginTop: 40}} selectedValue={selectedCurrency}
+            onValueChange={value => setSelectedCurrency(value)}>
+            {
+            Object.keys(rates).map((otsikko, maara) =>
+            <Picker.Item  key={maara} label={otsikko} value={otsikko} />)
+            }
+        </Picker>
+            <Button title='Muunna' onPress={suoritaLasku} />
+            
+        </View>
+    );
+}
+
+
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 10,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      padding: 20,
+    },
+  });
+
+  

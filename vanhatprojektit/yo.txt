@@ -1,0 +1,4 @@
+cd "Sijainti"
+expo start tai yarn start
+
+C:\Users\sampp\AppData\Local\Android\Sdk

@@ -1,0 +1,70 @@
+import React, {useState} from 'react';
+import { Button, StyleSheet, Text, View, Alert, TextInput, Image, FlatList} from 'react-native';
+
+
+
+function App() {
+    const [raakaAine, setRaakaAine] = useState([])
+    const [haku, setHaku] = useState('tomato')
+
+    const haeRaakaAine = () => {
+        fetch('http://www.recipepuppy.com/api/?i=' + haku)
+        .then((response) => response.json())
+        .then((responseJSON) => {
+            setRaakaAine(responseJSON.results);
+        })
+        .catch((error) => {
+            Alert.alert('ERROR TULI', error);
+        }); 
+        
+    
+    }
+
+    const listSeperator = () => {
+        return (
+            <View style={{
+                height: 1,
+                width: '80%',
+                backgroundColor: "#CED0CE",
+                marginLeft: '10%',
+
+            }}/>
+        );
+    };
+
+    return (
+        <View style={styles.container}>
+            <FlatList 
+               keyExtractor={item=>  item.title} 
+                renderItem={({item}) => 
+                <View>
+                <Text>{item.title}</Text>
+                <Image style={styles.logo} source={{uri:item.thumbnail}}/> 
+                </View>}
+                ItemSeparatorComponent={listSeperator}
+                data={raakaAine}/>
+            <TextInput placeholder='Hae raaka-aine' value={haku} onChangeText={haku => setHaku(haku)}/>
+            <Button title='Hae' onPress={haeRaakaAine} />
+            
+        </View>
+    );
+}
+
+
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 10,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      padding: 20,
+    },
+    logo: {
+        width: 66,
+        height: 58,
+      },
+  });
+
+  export default App;
+  
