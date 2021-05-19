@@ -89,7 +89,7 @@ export default function Etusivu() {
     const [kovalevyMerkki, setKovalevyMerkki] = useState('');
     const [koneNimi, setkoneNimi] = useState('');
     const [testiNimi, setTestiNimi] = useState('');
-    const image = { uri: "http://pa1.narvii.com/6616/3e67c90802f83263944b188b7b78c14f4b40c6bc_00.gif" };
+    const image = { uri: "https://cdn.dribbble.com/users/370759/screenshots/1796042/untitled-1.gif" };
     const listSeperator = () => {
         return (
             <View style={{ height: 5, width: '80%', backgroundColor: '#fff', marginLeft: '10%' }} />)

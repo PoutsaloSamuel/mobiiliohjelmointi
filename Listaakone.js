@@ -80,7 +80,7 @@ export default function Listaakone() {
     const [kovalevyMerkki, setKovalevyMerkki] = useState('');
     const [maara, setMaara] = useState('');
     const [nimi, setNimi] = useState('');
-    const image = { uri: "http://pa1.narvii.com/6616/3e67c90802f83263944b188b7b78c14f4b40c6bc_00.gif" };
+    const image = { uri: "https://cdn.dribbble.com/users/370759/screenshots/1796042/untitled-1.gif" };
 
     var yhteensa = naytonohjainHinta + prosessoriHinta + emolevyHinta + muistiHinta + kovalevyHinta;
     var i = 0;
@@ -149,21 +149,21 @@ export default function Listaakone() {
                                 setNaytonohjainHinta(parseInt(item.naytonohjainHinta))
                                 setNimi(item.koneNimiGPU)
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./nvidia.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/nvidia.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.naytonohjainNimi}{"\n"}Hinta: {item.naytonohjainHinta}€</Text>
                                 </View>
                             } else if (index == haku && item.naytonohjainMerkki == 'AMD') {
                                 setNaytonohjainHinta(parseInt(item.naytonohjainHinta))
                                 setNimi(item.koneNimiGPU)
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./amd.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/amd.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.naytonohjainNimi}{"\n"}Hinta: {item.naytonohjainHinta}€</Text>
                                 </View>
                             } else if (index == haku && item.naytonohjainMerkki == 'Muu') {
                                 setNaytonohjainHinta(parseInt(item.naytonohjainHinta))
                                 setNimi(item.koneNimiGPU)
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./muu.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/muu.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.naytonohjainNimi}{"\n"}Hinta: {item.naytonohjainHinta}€</Text>
                                 </View>
                             }
@@ -181,21 +181,21 @@ export default function Listaakone() {
                             if (index == haku && item.prosessoriMerkki == 'AMD') {
                                 setProsessoriHinta(parseInt(item.prosessoriHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./amd.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/amd.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.prosessoriNimi}{"\n"}Hinta: {item.prosessoriHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.prosessoriMerkki == 'Intel') {
                                 setProsessoriHinta(parseInt(item.prosessoriHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.pienikuva} source={require('./intel.png')} />
+                                    <Image style={styles.pienikuva} source={require('./assets/intel.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.prosessoriNimi}{"\n"}Hinta: {item.prosessoriHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.prosessoriMerkki == 'Muu') {
                                 setProsessoriHinta(parseInt(item.prosessoriHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./muu.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/muu.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.prosessoriNimi}{"\n"}Hinta: {item.prosessoriHinta}€</Text>
                                 </View>
                             }
@@ -213,35 +213,35 @@ export default function Listaakone() {
                             if (index == haku && item.emolevyMerkki == 'ASRock') {
                                 setEmolevyHinta(parseInt(item.emolevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./asrock.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/asrock.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.emolevyNimi}{"\n"}Hinta: {item.emolevyHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.emolevyMerkki == 'Asus') {
                                 setEmolevyHinta(parseInt(item.emolevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./asus.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/asus.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.emolevyNimi}{"\n"}Hinta: {item.emolevyHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.emolevyMerkki == 'Gigabyte') {
                                 setEmolevyHinta(parseInt(item.emolevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./gigabyte.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/gigabyte.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.emolevyNimi}{"\n"}Hinta: {item.emolevyHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.emolevyMerkki == 'MSI') {
                                 setEmolevyHinta(parseInt(item.emolevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./msi.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/msi.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.emolevyNimi}{"\n"}Hinta: {item.emolevyHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.emolevyMerkki == 'Intel') {
                                 setEmolevyHinta(parseInt(item.emolevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./intel.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/intel.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.emolevyNimi}{"\n"}Hinta: {item.emolevyHinta}€</Text>
 
                                 </View>
@@ -249,7 +249,7 @@ export default function Listaakone() {
                             else if (index == haku && item.emolevyMerkki == 'Muu') {
                                 setEmolevyHinta(parseInt(item.emolevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./muu.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/muu.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.emolevyNimi}{"\n"}Hinta: {item.emolevyHinta}€</Text>
                                 </View>
                             }
@@ -267,28 +267,28 @@ export default function Listaakone() {
                             if (index == haku && item.muistiMerkki == 'Muu') {
                                 setMuistiHinta(parseInt(item.muistiHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./muu.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/muu.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.muistiNimi}{"\n"}Hinta: {item.muistiHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.muistiMerkki == 'Corsair') {
                                 setMuistiHinta(parseInt(item.muistiHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./corsair.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/corsair.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.muistiNimi}{"\n"}Hinta: {item.muistiHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.muistiMerkki == 'Kingston') {
                                 setMuistiHinta(parseInt(item.muistiHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./kingston.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/kingston.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.muistiNimi}{"\n"}Hinta: {item.muistiHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.muistiMerkki == 'Samsung') {
                                 setMuistiHinta(parseInt(item.muistiHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.keskikuva} source={require('./samsung.png')} />
+                                    <Image style={styles.keskikuva} source={require('./assets/samsung.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.muistiNimi}{"\n"}Hinta: {item.muistiHinta}€</Text>
                                 </View>
                             }
@@ -307,35 +307,35 @@ export default function Listaakone() {
                             if (index == haku && item.kovalevyMerkki == 'Muu') {
                                 setKovalevyHinta(parseInt(item.kovalevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./muu.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/muu.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.kovalevyNimi}{"\n"}Hinta: {item.kovalevyHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.kovalevyMerkki == 'Seagate') {
                                 setKovalevyHinta(parseInt(item.kovalevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./seagate.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/seagate.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.kovalevyNimi}{"\n"}Hinta: {item.kovalevyHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.kovalevyMerkki == 'Kingston') {
                                 setKovalevyHinta(parseInt(item.kovalevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./kingston.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/kingston.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.kovalevyNimi}{"\n"}Hinta: {item.kovalevyHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.kovalevyMerkki == 'Samsung') {
                                 setKovalevyHinta(parseInt(item.kovalevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.pienikuva} source={require('./samsung.png')} />
+                                    <Image style={styles.pienikuva} source={require('./assets/samsung.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.kovalevyNimi}{"\n"}Hinta: {item.kovalevyHinta}€</Text>
                                 </View>
                             }
                             else if (index == haku && item.kovalevyMerkki == 'Intel') {
                                 setKovalevyHinta(parseInt(item.kovalevyHinta))
                                 return <View style={styles.listContainer}>
-                                    <Image style={styles.kuva} source={require('./intel.png')} />
+                                    <Image style={styles.kuva} source={require('./assets/intel.png')} />
                                     <Text style={{ fontSize: 16 }}>{item.kovalevyNimi}{"\n"}Hinta: {item.kovalevyHinta}€</Text>
                                 </View>
                             }

@@ -7,10 +7,7 @@ import * as firebase from 'firebase';
 import { faHome, faList, faPencilAlt, faStar } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome"
 
-import Konetallentaja from './Konetallentaja';
-import Rekisteri from './Rekisteri';
-import Listaakone from './Listaakone';
-const image = { uri: "http://pa1.narvii.com/6616/3e67c90802f83263944b188b7b78c14f4b40c6bc_00.gif" };
+const image = { uri: "https://cdn.dribbble.com/users/370759/screenshots/1796042/untitled-1.gif" };
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 

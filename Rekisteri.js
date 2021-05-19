@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 import React, { useState, useEffect } from 'react';
 import TextInput from 'react-native-textinput-with-icons';
 import { Button, StyleSheet, View, Text, Image, FlatList, Dimensions, ImageBackground, CheckBox, Alert, TouchableOpacity, } from 'react-native';
-const image = { uri: "http://pa1.narvii.com/6616/3e67c90802f83263944b188b7b78c14f4b40c6bc_00.gif" };
+const image = { uri: "https://cdn.dribbble.com/users/370759/screenshots/1796042/untitled-1.gif" };
 
 const firebaseConfig = {
     apiKey: "AIzaSyAoMXjhCDWdCu1Vp_T-HWtf7DPRbDiVRN4",
