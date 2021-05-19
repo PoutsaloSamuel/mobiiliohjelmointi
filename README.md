@@ -14,3 +14,7 @@ Name | Description | Usage
 [react-native-textinput-with-icons](https://www.npmjs.com/package/react-native-textinput-with-icons) | Material Text Input With Custom Icons | Used to create custom text inputs
 [react-native](https://reactnative.dev/) | The best parts of native development with React and a best-in-class JavaScript library | Used to create native apps for Android and iOS using React
 
+## Run with Expo Go
+### Scan QR-code with Expo Go-app 
+
+![Expo QR-Code](./assets/expo.png)
