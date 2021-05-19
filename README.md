@@ -16,5 +16,5 @@ Name | Description | Usage
 
 ## Run with Expo Go
 ### Scan QR-code with Expo Go-app 
-
+https://expo.io/@samuellsson/projects/mobiletiko
 ![Expo QR-Code](./expo.png)
