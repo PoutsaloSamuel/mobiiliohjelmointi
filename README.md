@@ -17,4 +17,4 @@ Name | Description | Usage
 ## Run with Expo Go
 ### Scan QR-code with Expo Go-app 
 
-![Expo QR-Code](./assets/expo.png)
+![Expo QR-Code](./expo.png)
